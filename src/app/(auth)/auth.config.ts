@@ -2,10 +2,13 @@ import bcrypt from "bcryptjs";
 import type { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
+import { user } from "@/drizzle/schema";
+
 
 import { LoginSchema } from "@/auth/_schema/login";
-import { dbAuth } from "@/lib/db-auth";
+import { dbAuth } from "@/drizzle/db-auth";
 import { getUserByEmail } from "./_data/user";
+import { eq } from "drizzle-orm";
 
 export default {
   //  basePath: "/api/auth", // <https://github.com/nextauthjs/next-auth/discussions/9748
@@ -62,21 +65,27 @@ export default {
           throw new Error("Google account missing email");
         }
         const img = picture || null;
-        const gUser = await dbAuth.user.upsert({
-          where: {
-            email,
-          },
-          create: {
-            email,
-            name,
-            image: img,
-            updatedAt: new Date(),
-          },
-          update: {
-            name: profile.name,
-            image: img,
-          },
-        });
+        // const gUser = await dbAuth.user.upsert({
+        //   where: {
+        //     email,
+        //   },
+        //   create: {
+        //     email,
+        //     name,
+        //     image: img,
+        //     updatedAt: new Date(),
+        //   },
+        //   update: {
+        //     name: profile.name,
+        //     image: img,
+        //   },
+        // });
+
+        const gUser = await getUserByEmail(email);
+        if (!gUser) {
+          throw new Error("Google account not found");
+        }
+
         user.id = gUser.id;
         //user.perwakilan = "perwakilan google"; // bagaimana cara set mendapatkan perwakilan klo login dari google?
         //console.log("user", user);

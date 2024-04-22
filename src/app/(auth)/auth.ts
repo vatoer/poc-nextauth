@@ -1,8 +1,8 @@
-import { PrismaAdapter } from "@auth/prisma-adapter";
+import { DrizzleAdapter } from "@auth/drizzle-adapter"
 import NextAuth from "next-auth";
 import authConfig from "./auth.config";
 
-import { dbAuth } from "@/lib/db-auth";
+import { dbAuth } from "@/drizzle/db-auth";
 
 export const {
   handlers: { GET, POST },
@@ -10,7 +10,7 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
-  adapter: PrismaAdapter(dbAuth),
+  adapter: DrizzleAdapter(dbAuth),
   session: { strategy: "jwt" },
   secret: process.env.AUTH_SECRET,
   ...authConfig,

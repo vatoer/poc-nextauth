@@ -40,4 +40,4 @@ next-env.d.ts
 
 # ignore generated types
 
-prisma/*/generated/*
+**/prisma/*/generated/*

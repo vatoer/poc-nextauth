@@ -1,5 +1,4 @@
-import { PrismaClient } from "@/prisma/db-auth/generated/client";
-
+import { PrismaClient } from '@prisma/client'
 declare global {
   var prismaDbAuth: PrismaClient | undefined;
 }

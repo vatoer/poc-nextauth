@@ -1,6 +1,6 @@
 import { TRegister } from "@/auth/_schema/register";
 import { dbAuth } from "@/lib/db-auth";
-import { Prisma, User } from "@/prisma/db-auth/generated/client";
+import { Prisma, User } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
 export const getUserByEmail = async (email: string) => {

@@ -9,17 +9,7 @@ import {
 } from "@/components/ui/card";
 
 const listOfMessages = [
-  "Cara mudah mendaftar sekolah secara online",
-  "Yuk, temukan cara praktis untuk mendaftar sekolah secara online!",
-  "Nikmati kemudahan mendaftar sekolah tanpa harus antri di lokasi pendaftaran",
-  "Dengan sistem Penerimaan Peserta Didik baru online, Anda bisa mendaftar kapan pun dan di mana pun.",
-  "Pendaftaran sekolah sekarang lebih mudah dengan Smart PPDB",
-  "Dapatkan akses langsung ke formulir pendaftaran tanpa harus datang ke sekolah.",
-  "Pendaftaran sekolah sekarang lebih mudah dengan Smart PPDB",
-  "Tak perlu lagi ribet bawa berkas-berkas, cukup unggah secara digital!",
-  "Jangan lewatkan kesempatan untuk bergabung dengan sekolah impian Anda, daftar sekarang juga secara online!",
-  "Manfaatkan fitur-fitur pintar yang disediakan dalam sistem pendaftaran online ini.",
-  "Tunggu apa lagi? Segera daftar online dan raih impian pendidikan Anda dengan mudah!",
+  "Mudah, cepat dan aman",
 ];
 
 export const CardBanner = () => {
@@ -35,7 +25,7 @@ export const CardBanner = () => {
       }}
     >
       <CardHeader>
-        <CardTitle className="text-6xl">Smart PPDB</CardTitle>
+        <CardTitle className="text-6xl">Smart App</CardTitle>
         <CardDescription className="text-white text-3xl">
           {randomMessage}
         </CardDescription>

@@ -10,7 +10,7 @@ export const Navbar = () => {
         <MenuMobile />
         <div className="flex items-center">
           <Link href="/" className="whitespace-nowrap text-white ">
-            <span>Smart PPDB</span>
+            <span>Smart App</span>
           </Link>
         </div>
         <Menu />

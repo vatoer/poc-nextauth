@@ -29,7 +29,7 @@ export const MenuMobile = () => {
           className="bg-primary/90 text-white flex flex-col gap-4 border-0 shadow-lg"
         >
           <SheetHeader className="">
-            <SheetTitle className="text-white text-2xl">Smart PPDB</SheetTitle>
+            <SheetTitle className="text-white text-2xl">Smart App</SheetTitle>
           </SheetHeader>
           <MenuItems />
         </SheetContent>
